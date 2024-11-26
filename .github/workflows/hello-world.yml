@@ -1,0 +1,22 @@
+name: Hello World Action
+
+# Trigger the workflow on push and pull request events
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define the job that will run on the GitHub runner
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Print Hello World
+      run: echo "Hello, World!"
